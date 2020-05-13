@@ -1,0 +1,7 @@
+{
+  "name": "AppOuvidoria",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

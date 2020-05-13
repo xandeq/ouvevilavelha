@@ -1,0 +1,105 @@
+page-home {
+    .ion-page > ion-content {
+        position: relative !important;
+    }
+
+    ion-navbar.toolbar {
+        padding: 10px 20px 20px 20px;
+    }
+
+    ion-header {
+        background: rgb(0,90,162);
+        background: linear-gradient(90deg, rgba(0,90,162,1) 0%, rgba(0,108,178,1) 100%);
+        padding: 10px 20px 20px 20px;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    button, .button-block-md {
+        display: block;
+        padding: 50px 5px;
+        height: auto;
+        height: 100%;
+        border-radius: 4px; 
+    }
+    .text-on-bottom > .button-inner {
+        flex-direction: column;
+    }
+
+    ion-icon {
+        margin-bottom: 10px;
+        font-size: 42px;
+        line-height: 42px;
+    }
+
+    .btnsolicitacao {
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+    }
+
+    .btnelogio {
+        color: #fff;
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+    }
+
+    .btnreclamacao {
+        color: #fff;
+        background-color: #f0ad4e;
+        border-color: #eea236;
+    }
+
+    .btndenuncia {
+        color: #fff;
+        background-color: #d9534f;
+        border-color: #d43f3a;
+    }
+
+    .btnleiacesso {
+        color: #333;
+        background-color: #fff;
+        border: solid 1px grey;
+    }
+
+    .btnpesquisar {
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+    }
+
+    #rodape {
+        background: rgb(0,90,162);
+        background: linear-gradient(90deg, rgba(0,90,162,1) 0%, rgba(0,108,178,1) 100%);
+        font-size: 9px;
+        color: #ffffff;
+        width: 100%;
+        clear: both;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    h3.titulopagina {
+        color: #ffffff;
+    }
+
+    .botoes {
+        width: 100%;
+        display: block;
+    }
+
+    .botaoesquerda {
+        padding: 5px !important;
+    }
+
+    .iconemenu {
+        font-size: 24px !important;
+        line-height: 24px !important;
+    }
+
+    .header header-ios img {
+        width: 80%;
+    }
+}

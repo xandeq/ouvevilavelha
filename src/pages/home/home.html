@@ -1,0 +1,68 @@
+<!-- <ion-header>
+    <ion-row>
+        <ion-col text-center>
+            <button menuToggle>
+                <ion-icon name="menu" class="iconemenu"></ion-icon>
+            </button>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col text-center>
+            <img src="assets/imgs/logonovabranca.png" style="margin: 0px auto; width: 40%" />
+        </ion-col>
+    </ion-row>
+</ion-header> -->
+<ion-header>
+    <ion-toolbar>
+        <button class="botaoesquerda" menuToggle start left>
+            <ion-icon name="menu" class="iconemenu"></ion-icon>
+        </button>
+        <ion-title center text-center style="background: none !important">
+            <img src="assets/imgs/logonovabranca.png" style="width: 40%" />
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col width-50>
+                <img src="assets/imgs/botao_solicitacao.png" (click)="goToFormulario('1')" class="img-responsive botoes" />
+            </ion-col>
+            <ion-col width-50>
+                <img src="assets/imgs/botao_elogiosugestao.png" (click)="goToFormulario('5')" class="img-responsive botoes" />
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col width-50>
+                <img src="assets/imgs/botao_reclamacao.png" (click)="goToFormulario('2')" class="img-responsive botoes" />
+            </ion-col>
+            <ion-col width-50>
+                <img src="assets/imgs/botao_denuncia.png" (click)="goToFormulario('4')" class="img-responsive botoes" />
+            </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-100>
+              <img src="assets/imgs/botao_aglomeracoes.png" (click)="goToFormulario('8')" class="img-responsive botoes" />
+          </ion-col>
+      </ion-row>
+        <ion-row>
+            <ion-col width-100>
+                <img src="assets/imgs/botao_buscar.png" (click)="goToBuscaEventos()" class="img-responsive botoes" />
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div id="rodape" class="rodsis">
+        <div id="row">
+            <div id="col-md-2 text-center">
+                <img src="assets/imgs/logorodapebranca.png" (click)="goToBuscaEventos()" class="img-responsive col-md-2" />
+            </div>
+        </div>
+        <div id="row">
+            <div id="col-md-12">
+                <p>Telefone: (27) 3149-7200 | www.vilavelha.es.gov.br</p>
+                <p>Endereço: Avenida Santa Leopoldina, 840 - Coqueiral de Itaparica, Vila Velha, ES - CEP: 29.102-375</p>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+    </div>
+</ion-content>

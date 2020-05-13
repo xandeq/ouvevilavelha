@@ -1,0 +1,180 @@
+<ion-header>
+  <ion-toolbar>
+    <button class="botaoesquerda" menuToggle start left>
+      <ion-icon name="menu" class="iconemenu"></ion-icon>
+    </button>
+    <ion-title center text-center>
+      <img src="assets/imgs/logonovabranca.png" style="width: 20%" />
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col class="col">
+      <ion-col>
+        <h3>{{varTipo}}</h3>
+      </ion-col>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="col-md-12">
+      <h2 text-center>+ NOVO EVENTO</h2>
+      <hr>
+      <h3 class="tituloazul" text-center>{{varTitulo}}</h3>
+      <hr />
+      <input type="hidden" ng-model="evento.tipo_evento_id" value="{{varTipoEvento}}">
+      <ion-row>
+        <ion-col col-12>
+          <ion-label>ASSUNTO:</ion-label>
+        </ion-col>
+        <ion-col col-12 class="bold">
+          <!-- <ion-select [(ngModel)]="evento.assunto_id" required>
+            <ion-option *ngFor="let city of lista_assuntos" value="{{city.id}}">{{city.descricao}}</ion-option>
+          </ion-select> -->
+          <ion-item style="border: solid 1px black">
+            <ionic-selectable item-content id="evento.assunto_id" [(ngModel)]="evento.assunto_id" [items]="lista_assuntos"
+              itemValueField="id" itemTextField="descricao" [canSearch]="true" (onChange)="portChange($event)">
+            </ionic-selectable>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          TIPO DE CADASTRO: </ion-col>
+        <ion-col col-12 class="bold">
+          <ion-select [(ngModel)]="evento.tipo_cadastro_id" #C required (ionChange)="onChange(C.value)" cancelText="Cancelar">
+            <ion-option value="2">Sigiloso</ion-option>
+            <ion-option value="3">Normal</ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          TIPO DE MANIFESTANTE:
+        </ion-col>
+        <ion-col col-12 class="bold">
+          <ion-select [(ngModel)]="evento.tipo_manifestante_id" required cancelText="Cancelar">
+            <!-- <ion-option value="...: Selecione :...">...: Selecione :...</ion-option> -->
+            <!-- <ion-option value="1">Líder Comunitário</ion-option> -->
+            <ion-option value="2">Pessoa Física</ion-option>
+            <ion-option value="3">Pessoa Jurídica</ion-option>
+            <!-- <ion-option value="4">Agente Político </ion-option> -->
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-label>NOME:</ion-label>
+        </ion-col>
+        <ion-col col-12 class="bold">
+          <ion-input type="text" name="txtnome" id="txtnome" [(ngModel)]="evento.nome" placeholder="Exemplo: Fulano da Silva"
+            [disabled]="varTipoAnonimo"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-label>CPF:</ion-label>
+        </ion-col>
+        <ion-col col-12 class="bold">
+          <ion-input type="number" maxlength="11" name="txtcpf" id="txtcpf" [(ngModel)]="evento.cpf" placeholder="CPF somente números" [disabled]="varTipoAnonimo"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-label>E-MAIL:</ion-label>
+        </ion-col>
+        <ion-col col-12 class="bold">
+          <ion-input type="text" name="txtemail" id="txtemail" [(ngModel)]="evento.email" placeholder="Exemplo: fulano@email.com.br"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-label>TELEFONE:</ion-label>
+        </ion-col>
+        <ion-col col-12 class="bold">
+          <ion-input type="text" name="txttelefone" id="txttelefone" [(ngModel)]="evento.telefone" placeholder="somente números, por exemplo: 2733330000"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-label>CELULAR:</ion-label>
+        </ion-col>
+        <ion-col col-12 class="bold">
+          <ion-input type="text" name="txtcelular" id="txtcelular" [(ngModel)]="evento.celular" placeholder="somente números, por exemplo: 2733330000"></ion-input>
+        </ion-col>
+      </ion-row>
+      <!-- <ion-row>
+        <ion-col col-12>
+          <ion-buttons>
+            <button ion-button icon-left (click)="presentActionSheet()">
+              <ion-icon name="camera"></ion-icon>Selecione uma imagem
+            </button>
+            <button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null">
+              <ion-icon name="cloud-upload"></ion-icon>Enviar
+            </button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row> -->
+      <ion-row>
+        <ion-col col-12>
+          <ion-label>BAIRRO DA MANIFESTAÇÃO:</ion-label>
+        </ion-col>
+        <ion-col col-12 class="bold">
+            <ion-item style="border: solid 1px black">
+                <ionic-selectable
+                  item-content 
+                  id="evento.bairro_id"
+                  [(ngModel)]="evento.bairro_id"
+                  [items]="lista_bairros"
+                  itemValueField="id"
+                  itemTextField="descricao"
+                  [canSearch]="true"
+                  (onChange)="portChangeBairro($event)">
+                </ionic-selectable>
+              </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-label>TIPO LOGRADOURO:</ion-label>
+        </ion-col>
+        <ion-col col-12 class="bold">
+          <ion-select [(ngModel)]="evento.tipo_manifestante_id">
+            <ion-option *ngFor="let tipos of lista_tiposlogradouros" value="{{tipos.id}}">{{tipos.descricao}}</ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-label>LOGRADOURO:</ion-label>
+        </ion-col>
+        <ion-col col-12 class="bold">
+          <ion-input type="text" name="txtlogradouro" id="txtlogradouro" [(ngModel)]="evento.logradouro"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-label>NÚMERO:</ion-label>
+        </ion-col>
+        <ion-col col-12 class="bold">
+          <ion-input type="number" name="txtnumero" id="txtnumero" [(ngModel)]="evento.numero"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-label>DESCRIÇÃO:</ion-label>
+        </ion-col>
+        <ion-col col-12 class="bold">
+          <ion-textarea type="text" name="txtdescricao" id="txtdescricao" [(ngModel)]="evento.descricao" rows="10"
+            required></ion-textarea>
+        </ion-col>
+      </ion-row>
+      <button large ion-button icon-start name="btnBuscar" id="btnBuscar" (click)='RegistrarEvento(evento)'>
+        <ion-icon name="checkmark"></ion-icon>
+        Salvar
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>

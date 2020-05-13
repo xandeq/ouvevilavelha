@@ -1,0 +1,22 @@
+<ion-menu [content]="content" side="left">
+    <ion-header>
+        <ion-toolbar color="primary" text-center>
+            <ion-title text-center>
+                <img src="assets/imgs/logonovabranca.png" style="width: 40%" />
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <!-- <div class="row text-center">
+        <div class="col-md-12 text-center">
+            <img src="assets/imgs/logonovabranca.png" style="width: 40%" />
+        </div>
+    </div> -->
+    <ion-content>
+        <ion-list>
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                ► {{p.title}}
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

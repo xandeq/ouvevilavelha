@@ -1,0 +1,24 @@
+page-busca-eventos {
+    .bold {
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    .text-input-md, .select-md {
+        border: solid 1px #6d6b6b;
+        padding: 13px 8px 13px 16px;
+        max-width: 100% !important;
+        margin: 0px;
+    }
+
+    h3.titulopagina {
+        color: #ffffff;
+    }
+    
+    .toolbar-background-md, .toolbar-background-ios {
+        background: rgb(0,90,162);
+        background: linear-gradient(90deg, rgba(0,90,162,1) 0%, rgba(0,108,178,1) 100%);
+    }
+}
+
+
