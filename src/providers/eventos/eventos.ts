@@ -16,9 +16,9 @@ import {Headers} from '@angular/http';
 export class EventosProvider {
 
 	//private API_URL = "http://localhost:50043";
-	private API_URL = "http://localhost:60406";
+	//private API_URL = "http://localhost:60406";
 	//private API_URL = "http://dev.vilavelha.local/ouvidoriaapi";
-	//private API_URL = "https://sistemas.vilavelha.es.gov.br/ouvidoriaapi";
+	private API_URL = "https://sistemas.vilavelha.es.gov.br/ouvidoriaapi";
 
   constructor(public http: Http) {
     console.log('Hello EventosProvider Provider');
